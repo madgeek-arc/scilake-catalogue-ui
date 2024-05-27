@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReusableComponentsModule } from "../dataSpaceUI/app/shared/reusablecomponents/reusable-components.module";
 import { DataSpaceUIModule } from "../dataSpaceUI/app/dataSpaceUI.module";
+import { ScilakeFooterComponent } from "./shared/footer/footer.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ScilakeFooterComponent
   ],
   imports: [
     BrowserModule,

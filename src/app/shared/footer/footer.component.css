@@ -1,0 +1,14 @@
+.uk-h6, h6 {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+  font-family: Inter !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-style: normal !important;
+  color: #23203f;
+}
+
+#footer\#0 .el-content {
+  font-size: 60% !important;
+}
