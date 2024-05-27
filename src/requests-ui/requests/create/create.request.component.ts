@@ -20,7 +20,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {From, Ticket} from "../../entities/ticket";
 import {RequestsService} from "../../services/requests.service";
 import {UserService} from "../../../dataSpaceUI/app/services/user.service";
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import UIkit from "uikit";
 
 @Component({
