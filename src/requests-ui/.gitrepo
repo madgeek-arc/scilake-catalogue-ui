@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/ingydotnet/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:madgeek-arc/ticketing-ui.git
+	branch = master
+	commit = a2df5b7c31133b982183a6557b7050cbe5fa4098
+	parent = d323874c65ea29b5f6336b69a0160462f85c94e8
+	method = merge
+	cmdver = 0.4.6
