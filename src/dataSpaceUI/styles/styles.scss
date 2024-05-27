@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '../assets/css/intelcomp-variable-overwrites';
+
+/* UIKit */
+@import "variables-theme.scss";
+@import "mixins-theme.scss";
+
+@import '../assets/css/intelcomp-mixin-overwrites';
+
+/* UIKit */
+@import "uikit-theme.scss";
+
+/* catalogue-ui css */
+@import '../catalogue-ui/assets/scss/service-catalogue-theme.css';
+
+/* dataSpaceUI css */
+@import '../assets/css/dataSpaceUI-custom';
+@import '../assets/css/sidebar.css';
+@import '../assets/css/nav-sidebar.css';
+@import '../assets/css/navbar.css';
+
+/* ng-select theme */
+@import "~@ng-select/ng-select/themes/default.theme.css";
