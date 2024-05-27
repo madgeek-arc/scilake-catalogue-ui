@@ -27,20 +27,33 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/dataSpaceUI/assets",
+              "src/dataSpaceUI/catalogue-ui/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/dataSpaceUI/styles/styles.scss",
+              "src/styles/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles",
+                "src/dataSpaceUI/styles",
+                "./node_modules/uikit/src/scss"
+              ]
+            },
+            "scripts": [
+              "./node_modules/uikit/dist/js/uikit.min.js",
+              "./node_modules/uikit/dist/js/uikit-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
