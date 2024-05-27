@@ -14,7 +14,7 @@ RUN npm run build:$configuration
 ### Create Container ###
 FROM nginx:alpine
 
-COPY --from=build /usr/src/app/dist/intelcomp-catalogue-ui /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/scilake-catalogue-ui /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
 EXPOSE 80
