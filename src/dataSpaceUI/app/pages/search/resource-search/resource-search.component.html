@@ -79,23 +79,27 @@
                         <div class="uk-width-2-3@m">
                           <div>
                             <h5 class="uk-margin-remove uk-text-left@m uk-text-center uk-scrollspy-inview uk-animation-fade uk-inline" uk-scrollspy-class="" style="">
-                              {{result.titles[0]?.value}}
+                              {{result.name}}
                             </h5>
                           </div>
                           <div *ngFor="let description of result?.descriptions">
                             <span *ngIf="description.descriptionType === 'ABSTRACT'" class="field-label">
-                              Abstract: {{description.content}}
+                              Abstract: {{description.value}}
                             </span>
                           </div>
-                          <div *ngIf="result?.resourceType?.value" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-                            <span class="field-label">Type: {{result?.resourceType?.value}}</span>
+                          <div *ngIf="result?.type" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
+                            <span class="field-label">Type: {{result?.type}}</span>
                           </div>
-                          <div *ngIf="result?.version" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-                            <span class="field-label">Version: {{result?.version}}</span>
+                          <div *ngIf="result?.tags?.length" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
+                            <span class="field-label">Tags: </span>
+                            <span *ngFor="let tag of result.tags; let i=index">{{ (i > 0 ? ', ':'') + tag }}</span>
                           </div>
-                          <div *ngIf="result?.publicationYear" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-                            <span class="field-label">Publication year: {{result?.publicationYear}}</span>
-                          </div>
+<!--                          <div *ngIf="result?.version" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">&ndash;&gt;-->
+<!--                            <span class="field-label">Version: {{result?.version}}</span>-->
+<!--                          </div>-->
+<!--                          <div *ngIf="result?.publicationYear" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">-->
+<!--                            <span class="field-label">Publication year: {{result?.publicationYear}}</span>-->
+<!--                          </div>-->
 
                         </div>
 
@@ -118,19 +122,19 @@
                         <div class="uk-card-body">
                           <div>
                             <h5 class="uk-margin-remove uk-text-left uk-scrollspy-inview uk-animation-fade uk-inline" uk-scrollspy-class="" style="">
-                              {{result.titles[0]?.value}}
+                              {{result.name}}
                             </h5>
                           </div>
 
-                          <div *ngIf="result?.resourceType?.value" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
+                          <div *ngIf="result?.type" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
                             <span class="field-label">Type: {{result?.resourceType?.value}}</span>
                           </div>
-                          <div *ngIf="result?.version" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-                            <span class="field-label">Version: {{result?.version}}</span>
-                          </div>
-                          <div *ngIf="result?.publicationYear" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-                            <span class="field-label">Publication year: {{result?.publicationYear}}</span>
-                          </div>
+<!--                          <div *ngIf="result?.version" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">-->
+<!--                            <span class="field-label">Version: {{result?.version}}</span>-->
+<!--                          </div>-->
+<!--                          <div *ngIf="result?.publicationYear" class="uk-margin-small-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">-->
+<!--                            <span class="field-label">Publication year: {{result?.publicationYear}}</span>-->
+<!--                          </div>-->
 
                         </div>
 

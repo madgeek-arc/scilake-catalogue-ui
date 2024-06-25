@@ -5,14 +5,14 @@
 
       <div class="uk-width-2-3">
         <h3 class="uk-margin-remove uk-text-left@m uk-text-center uk-scrollspy-inview uk-animation-fade uk-inline" uk-scrollspy-class="" style="">
-          {{payload?.titles[0]?.value || "Not Available"}}
+          {{payload?.name || "Not Available"}}
         </h3>
         <div *ngIf="payload?.identifier" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
           <span class="field-label">Identifier: {{payload['identifier']['value'] + ' (' + payload['identifier']['identifierType'] + ')'}}</span>
         </div>
-        <div *ngIf="payload?.publisher" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-          <span class="field-label">Publisher: {{payload.publisher.value}}</span>
-        </div>
+<!--        <div *ngIf="payload?.publisher" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">-->
+<!--          <span class="field-label">Publisher: {{payload.publisher.value}}</span>-->
+<!--        </div>-->
 
       </div>
 
@@ -49,7 +49,7 @@
 
             <div *ngFor="let description of payload.descriptions" class="uk-margin-bottom">
               <dt>{{description.descriptionType}}</dt>
-              <dd>{{description.content}}</dd>
+              <dd>{{description.value}}</dd>
             </div>
 
 <!--            <ul>-->
@@ -60,44 +60,45 @@
           </div>
         </div>
 
-        <!-- subject -->
-        <div *ngIf="payload?.subjects?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-          <span class="field-label">Subjects: </span>
-          <ng-container *ngFor="let subject of payload.subjects; let i=index" class="field-value uk-margin-small-left">
-            <span>{{(i === 0 ? '' : ', ') + subject.value}}</span>
+        <!-- tags -->
+        <div *ngIf="payload?.tags?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
+          <span class="field-label">Tags: </span>
+          <ng-container *ngFor="let tag of payload.tags; let i=index" class="field-value uk-margin-small-left">
+            <span>{{(i === 0 ? '' : ', ') + tag}}</span>
           </ng-container>
         </div>
         <!-- type -->
-        <div *ngIf="payload?.resourceType" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-          <span class="field-label">Type: {{payload.resourceType.value}}</span>
+        <div *ngIf="payload?.type" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
+          <span class="field-label">Type: {{payload.type}}</span>
         </div>
         <!-- formats -->
-        <div *ngIf="payload?.formats?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-          <span class="field-label">Formats: </span>
-          <ng-container *ngFor="let format of payload.formats; let i=index" class="field-value uk-margin-small-left">
-            <span>{{(i === 0 ? '' : ', ') + format}}</span>
-          </ng-container>
-        </div>
-        <!-- version -->
-        <div *ngIf="payload?.version" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-          <span class="field-label">Version: {{payload.version}}</span>
-        </div>
-        <!-- publication year -->
-        <div *ngIf="payload?.publicationYear" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-          <span class="field-label">Publication year: </span>
-          <span class="field-value uk-margin-small-left">{{payload.publicationYear}}</span>
-        </div>
+<!--        <div *ngIf="payload?.formats?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">-->
+<!--          <span class="field-label">Formats: </span>-->
+<!--          <ng-container *ngFor="let format of payload.formats; let i=index" class="field-value uk-margin-small-left">-->
+<!--            <span>{{(i === 0 ? '' : ', ') + format}}</span>-->
+<!--          </ng-container>-->
+<!--        </div>-->
+        <!-- versions -->
+<!--        <div *ngIf="payload?.version?.length" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">-->
+<!--          <span class="field-label">Version: {{payload.version}}</span>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; publication year &ndash;&gt;-->
+<!--        <div *ngIf="payload?.publicationYear" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">-->
+<!--          <span class="field-label">Publication year: </span>-->
+<!--          <span class="field-value uk-margin-small-left">{{payload.publicationYear}}</span>-->
+<!--        </div>-->
       </div>
 
       <div class="uk-width-1-3">
 
-        <div *ngIf="payload?.creators?.length > 0" class="uk-card uk-card-default uk-card-body uk-margin-top">
-          <h6 class="field-label">Creators</h6>
+        <div *ngIf="payload?.version?.length > 0" class="uk-card uk-card-default uk-card-body uk-margin-top">
+          <h6 class="field-label">Versions</h6>
 
           <div class="uk-flex">
             <ul>
-              <li *ngFor="let creator of payload.creators">
-                <span>{{creator.creatorName.value}}</span>
+              <li *ngFor="let version of payload.version">
+                <span>{{version.versionNumber}}</span>
+                <span>{{version.creationdate | date}}</span>
               </li>
             </ul>
           </div>
