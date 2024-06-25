@@ -65,7 +65,7 @@ const dataSpaceRoutes: Routes = [
     component: BrowseJobsComponent
   },
   {
-    path: 'landingPage/:resourceType/:identifierValue',
+    path: 'landingPage/:resourceType/:id',
     component: PayloadComponent
   },
   {

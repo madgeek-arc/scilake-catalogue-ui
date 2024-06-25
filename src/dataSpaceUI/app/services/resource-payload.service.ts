@@ -44,8 +44,8 @@ export class ResourcePayloadService {
     return this.http.get<Paging<any>>(this.base + `/items?resourceType=${resourceType}`, {params: params});
   }
 
-  getItem(resourceType: string, identifierValue: string) {
-    return this.http.get(this.base + `/items/search?resourceType=${resourceType}&field=identifier&value=${identifierValue}`);
+  getItem(resourceType: string, id: string) {
+    return this.http.get(this.base + `/items/${id}?resourceType=${resourceType}`);
   }
 
   getItemById(resourceType: string, id: string) {
