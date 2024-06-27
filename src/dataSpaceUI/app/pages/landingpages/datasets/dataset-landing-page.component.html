@@ -12,14 +12,14 @@
           <div *ngIf="dataset['identifier']" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
             <span class="field-label">Identifier: {{dataset['identifier']['value'] + ' (' + dataset['identifier']['identifierType'] + ')'}}</span>
           </div>
-          <div *ngIf="dataset['publisher']" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
-            <span class="field-label">Publisher: {{dataset['publisher']}}</span>
-          </div>
+<!--          <div *ngIf="dataset['publisher']" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">-->
+<!--            <span class="field-label">Publisher: {{dataset['publisher']}}</span>-->
+<!--          </div>-->
 
-          <div *ngIf="dataset['languages'][0] !== ''" class="uk-margin-top uk-scrollspy-inview uk-animation-fade" uk-scrollspy-class="" style="">
-            <!--<span class="field-label">Language: </span>-->
-            <span *ngFor="let language of dataset['languages']" class="field-value uk-label uk-margin-small-right">{{language}}</span>
-          </div>
+<!--          <div *ngIf="dataset['languages'][0] !== ''" class="uk-margin-top uk-scrollspy-inview uk-animation-fade" uk-scrollspy-class="" style="">-->
+<!--            &lt;!&ndash;<span class="field-label">Language: </span>&ndash;&gt;-->
+<!--            <span *ngFor="let language of dataset['languages']" class="field-value uk-label uk-margin-small-right">{{language}}</span>-->
+<!--          </div>-->
         </div>
 
         <div class="uk-width-1-3">
@@ -56,7 +56,8 @@
           </div>
 
           <!-- subject -->
-          <div *ngIf="dataset['subjects'][0] !== ''" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
+          <div *ngIf="dataset['subjects'][0] !== '' && dataset['subjects'][0] !== null"
+               class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
             <span class="field-label">Subjects: </span>
             <ng-container *ngFor="let item of dataset['subjects']; let i=index" class="field-value uk-margin-small-left">
               <span>{{(i === 0 ? '' : ', ') + item}}</span>
@@ -64,13 +65,13 @@
           </div>
           <!-- type -->
           <div *ngIf="dataset['type']" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-            <span class="field-label">Type: {{dataset['type']['clazz'] + ' ' + dataset['type']['value']}}</span>
+            <span class="field-label">Type: {{ dataset['type'] }}</span>
           </div>
           <!-- format -->
-          <div *ngIf="dataset['formats'][0] !== ''" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-            <span class="field-label">Formats: </span>
-            <span *ngFor="let item of dataset['formats']" class="field-value uk-margin-small-left">{{item}}</span>
-          </div>
+<!--          <div *ngIf="dataset['formats'][0] !== ''" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">-->
+<!--            <span class="field-label">Formats: </span>-->
+<!--            <span *ngFor="let item of dataset['formats']" class="field-value uk-margin-small-left">{{item}}</span>-->
+<!--          </div>-->
           <!-- webpage -->
           <div *ngIf="dataset['webpage']" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="">
             <span class="field-label">Webpage: </span> <a href="{{dataset['webpage']}}" target="_blank">{{dataset['webpage']}}</a>
@@ -79,14 +80,14 @@
           <div *ngIf="dataset['source']" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
             <span class="field-label">Source: {{dataset['source']}}</span>
           </div>
-          <!-- related --><!--TODO ADD DATA TO CHECK FUNCTIONALITY-->
-          <div *ngIf="dataset['relatedIdentifiers']?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-            <span class="field-label">Related Identifiers: {{dataset['relatedIdentifiers']}}</span>
-          </div>
-          <!-- coverage --> <!--TODO ADD DATA TO CHECK FUNCTIONALITY-->
-          <div *ngIf="dataset['geoLocations']?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">
-            <span class="field-label">Coverage: {{dataset['geoLocations']}}</span>
-          </div>
+          <!-- related -->
+<!--          <div *ngIf="dataset['relatedIdentifiers']?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">-->
+<!--            <span class="field-label">Related Identifiers: {{dataset['relatedIdentifiers']}}</span>-->
+<!--          </div>-->
+          <!-- coverage -->
+<!--          <div *ngIf="dataset['geoLocations']?.length > 0" class="uk-margin-top uk-scrollspy-inview uk-animation-fade service-users" uk-scrollspy-class="" style="">-->
+<!--            <span class="field-label">Coverage: {{dataset['geoLocations']}}</span>-->
+<!--          </div>-->
         </div>
 
         <div class="uk-width-1-3">
